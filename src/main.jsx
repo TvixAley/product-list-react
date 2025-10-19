@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles/index.css'
 import App from './App.jsx'
+import {CartProvider} from "./context/CartContext.jsx";
 
 async function enableMocking() {
     if (import.meta.env.DEV || window.location.hostname.includes('github.io')) {
@@ -23,7 +24,9 @@ async function enableMocking() {
 enableMocking().then(() => {
     createRoot(document.getElementById('root')).render(
         <StrictMode>
-            <App />
+            <CartProvider>
+                <App />
+            </CartProvider>
         </StrictMode>
     );
 });
