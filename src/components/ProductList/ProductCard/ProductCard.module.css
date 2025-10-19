@@ -1,0 +1,49 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    row-gap: 38px;
+    width: 100%;
+}
+
+.imageButtonWrapper{
+    position: relative;
+}
+
+.image{
+    width: 100%;
+    aspect-ratio: 25 / 24;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+.button{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.category{
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-rose-500);
+}
+
+.name{
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-rose-900);
+}
+
+.price{
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-red);
+}
