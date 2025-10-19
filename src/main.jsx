@@ -6,13 +6,19 @@ import App from './App.jsx'
 async function enableMocking() {
     if (import.meta.env.DEV || window.location.hostname.includes('github.io')) {
         const { worker } = await import('./mock-server/browser');
+
+        const isGitHubPages = window.location.hostname.includes('github.io');
+
         await worker.start({
             serviceWorker: {
-                url: '/product-list-react/mockServiceWorker.js',
+                url: isGitHubPages
+                    ? '/product-list-react/mockServiceWorker.js'
+                    : '/mockServiceWorker.js',
             },
         });
     }
 }
+
 
 enableMocking().then(() => {
     createRoot(document.getElementById('root')).render(
