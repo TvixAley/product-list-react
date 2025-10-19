@@ -8,7 +8,7 @@ async function enableMocking() {
         const { worker } = await import('./mock-server/browser');
         await worker.start({
             serviceWorker: {
-                url: '/mockServiceWorker.js',
+                url: '/product-list-react/mockServiceWorker.js',
             },
         });
     }
