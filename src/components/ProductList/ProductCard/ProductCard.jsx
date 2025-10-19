@@ -6,7 +6,11 @@ const ProductCard = ({product}) => {
     return (
         <article className={classes.card}>
             <div className={classes.imageButtonWrapper}>
-                <img src={`./mock-server-data/${product.image.desktop}`} alt="" className={classes.image}/>
+                <picture>
+                    <source srcSet={`./mock-server-data/${product.image.mobile}`} media='(max-width: 500px)'/>
+                    <source srcSet={`./mock-server-data/${product.image.tablet}`} media='(max-width: 1024px)'/>
+                    <img src={`./mock-server-data/${product.image.desktop}`} alt="" className={classes.image}/>
+                </picture>
                 <CardButton className={classes.button}/>
             </div>
 

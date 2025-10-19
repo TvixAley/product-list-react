@@ -26,16 +26,16 @@ const ProductList = () => {
         };
 
         fetchProducts();
-    }, []); // пустой массив => выполнится один раз при монтировании компонента
+    }, []);
 
-    if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
     return (
         <div className={classes.productList}>
             <h2 className={classes.productList__title}>Desserts</h2>
             <ul className={classes.productList__list}>
-                {products.map(product => (
+                {loading ? <p>Loading...</p> :
+                products.map(product => (
                     <li className={classes.productList__item} key={product.id}>
                         <ProductCard product={product}/>
                     </li>

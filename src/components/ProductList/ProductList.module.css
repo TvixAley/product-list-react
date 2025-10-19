@@ -26,3 +26,9 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
+
+@media  (max-width: 500px){
+    .productList__list{
+        grid-template-columns: 1fr;
+    }
+}
