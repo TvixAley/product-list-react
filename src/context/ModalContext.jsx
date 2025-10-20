@@ -6,10 +6,15 @@ export function ModalProvider({children}) {
 
     const [isModalActive, setModalActive] = useState(false)
 
+    const closeModal = () => {
+        setModalActive(false)
+    }
+
     return (
         <ModalContext.Provider value={{
             isModalActive,
-            setModalActive
+            setModalActive,
+            closeModal
         }}
         >
             {children}

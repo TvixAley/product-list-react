@@ -9,8 +9,13 @@ import {useModal} from "../../context/ModalContext.jsx";
 
 const OrderConfirmation = () => {
 
-    const {cart, totalPrice} = useCart()
-    const {setModalActive} = useModal()
+    const {cart, totalPrice, clearCart} = useCart()
+    const {closeModal} = useModal()
+
+    const startNewOrder = () => {
+        closeModal()
+        clearCart()
+    }
 
     return (
         <div className={classes.confirmationBlock}>
@@ -34,7 +39,7 @@ const OrderConfirmation = () => {
                     <span className={classes.total__price}>{`$${Number(totalPrice).toFixed(2)}`}</span>
                 </div>
             </div>
-            <CustomButton onClick={() => setModalActive(false)}>Start New Order</CustomButton>
+            <CustomButton onClick={startNewOrder}>Start New Order</CustomButton>
         </div>
     );
 };
