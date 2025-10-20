@@ -5,7 +5,7 @@
 
     max-width: 384px;
     width: 100%;
-    height: 300px;
+    height: fit-content;
 
     background-color: white;
     border-radius: 12px;
@@ -30,11 +30,22 @@
     align-items: center;
 }
 
+.cartItems__list{
+    display: flex;
+    flex-direction: column;
+    padding-block: 16px;
+    row-gap: 32px;
+}
+
 .emptyCartText{
     font-weight: 600;
     font-size: 14px;
     text-align: center;
     color: var(--color-rose-500);
+}
+
+.cartItems__list{
+    list-style: none;
 }
 
 @media (max-width: 1280px) {

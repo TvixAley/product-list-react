@@ -1,0 +1,52 @@
+.item{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item:after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-rose-100);
+
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.name{
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-rose-900);
+}
+
+.numbers{
+    display: flex;
+    column-gap: 8px;
+}
+
+.quantity{
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-red);
+}
+
+.price{
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-rose-500);
+}
+
+.total{
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-rose-500);
+}
