@@ -12,6 +12,7 @@ function App() {
 
     return (
         <main>
+            <h1 className={'visually-hidden'}>Delicious Desserts</h1>
             <ProductList/>
             <ProductCart setModalActive={setModalActive}/>
             <CustomModal isActive={isModalActive}>

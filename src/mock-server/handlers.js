@@ -3,7 +3,7 @@ import data from './data.json'
 
 export const handlers = [
     http.get('/api/products', async () => {
-        await delay(1000)
+        await delay(300)
         return HttpResponse.json(data);
     }),
 ];
