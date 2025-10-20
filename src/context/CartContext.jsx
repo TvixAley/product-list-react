@@ -3,7 +3,10 @@ import {createContext, useContext, useState, useEffect} from "react";
 const CartContext = createContext(null);
 
 export function CartProvider({children}) {
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(() => {
+        const savedCart = localStorage.getItem('cart');
+        return savedCart ? JSON.parse(savedCart) : [];
+    });
 
     const [totalQuantity, setTotalQuantity] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
@@ -14,6 +17,8 @@ export function CartProvider({children}) {
 
         setTotalQuantity(quantity);
         setTotalPrice(price);
+
+        localStorage.setItem('cart', JSON.stringify(cart));
     }, [cart]);
 
     const addToCart = (product) => {
