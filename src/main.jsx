@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './styles/index.css'
 import App from './App.jsx'
 import {CartProvider} from "./context/CartContext.jsx";
+import {ProductsProvider} from "./context/ProductsContext.jsx";
+import {ModalProvider} from "./context/ModalContext.jsx";
 
 async function enableMocking() {
     if (import.meta.env.DEV || window.location.hostname.includes('github.io')) {
@@ -25,7 +27,11 @@ enableMocking().then(() => {
     createRoot(document.getElementById('root')).render(
         <StrictMode>
             <CartProvider>
-                <App />
+                <ProductsProvider>
+                    <ModalProvider>
+                        <App />
+                    </ModalProvider>
+                </ProductsProvider>
             </CartProvider>
         </StrictMode>
     );

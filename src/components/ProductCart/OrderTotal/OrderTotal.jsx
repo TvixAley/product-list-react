@@ -3,10 +3,12 @@ import classes from './OrderTotal.module.css'
 import {useCart} from "../../../context/CartContext.jsx";
 import treeIcon from '../../../assets/icons/icon-carbon-neutral.svg'
 import CustomButton from "../../UI/CustomButton/CustomButton.jsx";
+import {useModal} from "../../../context/ModalContext.jsx";
 
 const OrderTotal = () => {
 
     const {totalPrice} = useCart()
+    const {setModalActive} = useModal()
 
     return (
         <div className={classes.wrapper}>
@@ -18,7 +20,7 @@ const OrderTotal = () => {
                 <img src={treeIcon} alt="" width={20} height={20}/>
                 <span>This is a <b>carbon-neutral</b> delivery</span>
             </div>
-            <CustomButton>Confirm Order</CustomButton>
+            <CustomButton onClick={() => setModalActive(true)}>Confirm Order</CustomButton>
         </div>
     );
 };

@@ -1,0 +1,39 @@
+.modal{
+    padding: 40px;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalContent{
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    padding: 40px;
+    background-color: white;
+}
+
+.modal.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 500px) {
+    .modal{
+        padding: 0;
+    }
+
+    .modal.active{
+        align-items: flex-end;
+    }
+
+    .modalContent{
+        padding: 40px 24px 24px 24px;
+        border-radius: 12px 12px 0 0;
+    }
+}

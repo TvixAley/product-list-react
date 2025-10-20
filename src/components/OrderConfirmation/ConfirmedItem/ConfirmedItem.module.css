@@ -1,0 +1,49 @@
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item__description{
+    display: flex;
+    column-gap: 16px;
+}
+
+.item__text{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    font-size: 14px;
+}
+
+.item__numbers{
+    display: flex;
+    column-gap: 8px;
+}
+
+.quantity{
+    font-weight: 600;
+    color: var(--color-red);
+}
+
+.price{
+    font-weight: 400;
+    color: var(--color-rose-500);
+}
+
+.item__price{
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-rose-900);
+}
+
+.item__name{
+    font-weight: 600;
+    color: var(--color-rose-900);
+}
+
+.item__image{
+    border-radius: 4px;
+    display: block;
+}
