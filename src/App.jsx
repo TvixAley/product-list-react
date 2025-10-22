@@ -8,14 +8,14 @@ import {useModal} from "./context/ModalContext.jsx";
 
 function App() {
 
-    const {isModalActive, setModalActive} = useModal()
+    const {isModalActive, setModalActive, closeModal} = useModal()
 
     return (
         <main>
             <h1 className={'visually-hidden'}>Delicious Desserts</h1>
             <ProductList/>
             <ProductCart setModalActive={setModalActive}/>
-            <CustomModal isActive={isModalActive}>
+            <CustomModal isActive={isModalActive} onClose={closeModal}>
                 <OrderConfirmation/>
             </CustomModal>
         </main>
